@@ -1,0 +1,33 @@
+<p>detail works!</p>
+<table border="1">
+    <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Detail</th>
+        <th>Price</th>
+    </tr>
+    <tr>
+        <td>{{selectedBook.id}}</td>
+        <td>{{selectedBook.name}}</td>
+        <td>{{selectedBook.detail}}</td>
+        <td>{{selectedBook.price}}</td>
+    </tr>
+</table>
+
+<hr>
+<table border="1">
+    <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Detail</th>
+        <th>Price</th>
+        <th>Action</th>
+    </tr>
+    <tr *ngFor="let data of bookList">
+        <td>{{data.id}}</td>
+        <td>{{data.name}}</td>
+        <td>{{data.detail}}</td>
+        <td>{{data.price}}</td>
+        <td><a [routerLink]="['../../detail', data.id]">Detail</a></td>
+    </tr>
+</table>
