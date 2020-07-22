@@ -30,6 +30,7 @@ const routes: Routes = [
         ]
     },
     { path: 'contact', component: ContactComponent, canDeactivate: [CanDeGuard] },
+    { path: 'contactNew', component: ContactComponent, outlet:'contactRouter' },
     { path: 'gallery', component: GalleryComponent, canDeactivate: [CanDeGuard] },
     {
         path: 'book', children: [
@@ -37,7 +38,7 @@ const routes: Routes = [
             { path: 'detail/:id', component: DetailComponent, resolve: { bookObj: ResGuard } },
         ]
     },
-    { path: 'company', loadChildren: () => import('../app/company/company.module').then(m => m.CompanyModule), canLoad:[CanloadGuard] },
+    { path: 'company', loadChildren: () => import('../app/company/company.module').then(m => m.CompanyModule), canLoad: [CanloadGuard] },
     //{ path: '**', component: PagenotfoundComponent }
 ]
 

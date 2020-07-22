@@ -7,7 +7,15 @@
         <li><a routerLink="gallery">Gallery</a></li>
         <li><a routerLink="book">Book</a></li>
         <li><a routerLink="company">company</a></li>
-        <li><a routerLink="contact">Contact</a></li>
+        <li><a routerLink="contact">Contact New</a></li>
+        <li><a [routerLink]="[{outlets:{contactRouter:['contactNew']}}]">Contact</a></li>
     </ul>
 </nav>
-<router-outlet></router-outlet>
+
+<div style="background:red;">
+    <router-outlet></router-outlet>
+</div>
+
+<div style="background:green;">
+    <router-outlet name="contactRouter"></router-outlet>
+</div>
